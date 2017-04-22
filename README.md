@@ -1,16 +1,15 @@
-tutum-docker-mongodb
+docker-mongo
 ====================
-**This image is an updated version of [phirov/docker-mongo](https://hub.docker.com/r/phirov/docker-mongo/)**
+**This image is an updated version of [tutum/mongodb](https://hub.docker.com/r/tutum/mongodb/)**
 
 Base docker image to run a MongoDB database server
-
 
 MongoDB version
 ---------------
 
 Different versions are built from different folders. 
 
-If you want to use MongoDB, please check out [`phirov/docker-mongo`](https://github.com/phirov/docker-mongo) image.
+For detailed configuration of this image, please check out **[`phirov/docker-mongo`](https://github.com/phirov/docker-mongo) image**.
 
 
 Usage
