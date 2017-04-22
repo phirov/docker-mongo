@@ -122,6 +122,8 @@ The variable `OPLOG_SIZE_MB` can be used to specify the mongod oplog size in meg
 
 By default MongoDB allocates 5% of the available free disk space, but will always allocate at least 1 gigabyte and never more than 50 gigabytes.
 
+For more detail, please consult [official docs](https://docs.mongodb.com/manual/reference/program/mongod/#cmdoption-oplogsize)
+
 
 ## Change the default wiredTiger cache size
 
@@ -133,14 +135,18 @@ The variable `CACHE_SIZE_GB` can be used to defines the maximum size of the inte
 
 With WiredTiger, MongoDB utilizes both the WiredTiger internal cache and the filesystem cache.
 
-### MongoDB 3.2
+### [v3.2](https://docs.mongodb.com/v3.2/reference/program/mongod/#cmdoption-wiredtigercachesizegb)
+
+`CACHE_SIZE_GB` is in format of number.
 
 The WiredTiger internal cache, by default, will use the larger of either 
 
  - 60% of RAM minus 1 GB, or 
  - 1 GB
 
-### MongoDB 3.4 
+### [v3.4](https://docs.mongodb.com/manual/reference/program/mongod/#cmdoption-wiredtigercachesizegb)
+
+`CACHE_SIZE_GB` is in format of float.
 
 The WiredTiger internal cache, by default, will use the larger of either:
 
