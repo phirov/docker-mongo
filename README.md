@@ -1,11 +1,10 @@
 # docker-mongo
-====================
+
 **This image is an updated version of [tutum/mongodb](https://hub.docker.com/r/tutum/mongodb/)**
 
 Base docker image to run a MongoDB database server
 
 ## MongoDB version
----------------
 
 Different versions are built from different folders. 
 
@@ -13,7 +12,6 @@ For detailed configuration of this image, please check out **[`phirov/docker-mon
 
 
 ## Usage
------
 
 To create the image `phirov/docker-mongo`, execute the following command on your local project folder:
 
@@ -21,7 +19,6 @@ To create the image `phirov/docker-mongo`, execute the following command on your
 
 
 ## Running the MongoDB server
---------------------------
 
 Run the following command to start MongoDB:
 
@@ -52,8 +49,7 @@ You can then connect to MongoDB:
 Done!
 
 
-Setting a specific password for the admin account
--------------------------------------------------
+## Setting a specific password for the admin account
 
 If you want to use a preset password instead of a randomly generated one, you can
 set the environment variable `MONGODB_PASS` to your specific password when running the container:
@@ -69,8 +65,7 @@ You can now test your new admin password:
         curl --user admin:mypass --digest http://localhost:28017/
 ```
 
-Setting a specific user:database
---------------------------------
+## Setting a specific user:database
 
 If you want to use another database with another user
 
@@ -90,8 +85,7 @@ Note: with mongo 3.x an admin user is also created with the same credentials
     mongo admin -u user -p mypass
 ```
 
-Run MongoDB without password
-----------------------------
+## Run MongoDB without password
 
 If you want to run MongoDB without password you can set the environment variable `AUTH` to specific if you want password or not when running the container:
 
@@ -102,8 +96,7 @@ If you want to run MongoDB without password you can set the environment variable
 By default is "yes".
 
 
-Run MongoDB with a specific storage engine
-------------------------------------------
+## Run MongoDB with a specific storage engine
 
 In MongoDB 3.0 there is a new environment variable `STORAGE_ENGINE` to specific the mongod storage driver:
 
@@ -114,8 +107,7 @@ In MongoDB 3.0 there is a new environment variable `STORAGE_ENGINE` to specific 
 By default is "wiredTiger".
 
 
-Change the default oplog size
------------------------------
+## Change the default oplog size
 
 The variable `OPLOG_SIZE_MB` can be used to specify the mongod oplog size in megabytes:
 
@@ -126,8 +118,7 @@ The variable `OPLOG_SIZE_MB` can be used to specify the mongod oplog size in meg
 By default MongoDB allocates 5% of the available free disk space, but will always allocate at least 1 gigabyte and never more than 50 gigabytes.
 
 
-Change the default wiredTiger cache size
------------------------------
+## Change the default wiredTiger cache size
 
 The variable `CACHE_SIZE_GB` can be used to defines the maximum size of the internal cache that WiredTiger will use for all data in gigabytes:
 
@@ -137,12 +128,16 @@ The variable `CACHE_SIZE_GB` can be used to defines the maximum size of the inte
 
 With WiredTiger, MongoDB utilizes both the WiredTiger internal cache and the filesystem cache.
 
-In MongoDB 3.2, the WiredTiger internal cache, by default, will use the larger of either 
+### MongoDB 3.2
+
+The WiredTiger internal cache, by default, will use the larger of either 
 
  - 60% of RAM minus 1 GB, or 
  - 1 GB
 
-In MongoDB 3.4, the WiredTiger internal cache, by default, will use the larger of either:
+### MongoDB 3.4 
+
+The WiredTiger internal cache, by default, will use the larger of either:
 
  - 50% of RAM minus 1 GB, or
  - 256 MB.
