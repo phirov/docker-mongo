@@ -47,7 +47,7 @@ You will see an output like the following:
 In this case, `5elsT6KtjrqV` is the password set.
 You can then connect to MongoDB:
 
-```shell
+```
 	mongo admin -u admin -p 5elsT6KtjrqV
 ```
 
@@ -60,14 +60,14 @@ If you want to use a preset password instead of a randomly generated one, you ca
 set the environment variable `MONGODB_PASS` to your specific password when running the container:
 
 ```
-        docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_PASS="mypass" phirov/docker-mongo
+	docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_PASS="mypass" phirov/docker-mongo
 ```
 
 You can now test your new admin password:
 
 ```
-        mongo admin -u admin -p mypass
-        curl --user admin:mypass --digest http://localhost:28017/
+	mongo admin -u admin -p mypass
+	curl --user admin:mypass --digest http://localhost:28017/
 ```
 
 ## Setting a specific user:database
